@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { ArrowLeft, Music, MapPin, Users, Award, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -60,16 +59,16 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
                   <p>
-                    Основна музичка школа Пријепоље основана је 1971. године при Радничком
-                    универзитету „Сретен Вукосављевић", а од 1979. године радила је у саставу Дома културе.
-                    Одлуком Владе Републике Србије крајем 1995. године школа добија статус самосталне
-                    специјалне васпитно образовне установе.
+                    Osnovna muzička škola Prijepolje osnovana je 1971. godine pri Radničkom
+                    univerzitetu „Sreten Vukosavljević", a od 1979. godine radila je u sastavu Doma kulture.
+                    Odlukom Vlade Republike Srbije krajem 1995. godine škola dobija status samostalne
+                    specijalne vaspitno obrazovne ustanove.
                   </p>
                   <p>
-                    При самом осамостаљивању школи је припојено Издвојено одељење у Прибоју,
-                    а новембра 2002. године одлуком Министарства просвете основано је и Издвојено
-                    одељење у Новој Вароши. Тако сада школа покрива територију три општине: Пријепоље,
-                    Прибој и Нова Варош.
+                    Pri samom osamostaljivanju školi je pripojeno Izdvojeno odeljenje u Priboju,
+                    a novembra 2002. godine odlukom Ministarstva prosvete osnovano je i Izdvojeno
+                    odeljenje u Novoj Varoši. Tako sada škola pokriva teritoriju tri opštine: Prijepolje,
+                    Priboj i Nova Varoš.
                   </p>
                 </div>
               </CardContent>
@@ -80,21 +79,21 @@ const About = () => {
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center">
                   <MapPin className="h-8 w-8 text-blue-600 mr-3" />
-                  Локација и сарадња
+                  Lokacija i saradnja
                 </h2>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
                   <p>
-                    Матична школа је смештена у простору Дома културе. Налази се на ушћу
-                    Милешевке у реку Лим. Повезана је мрежом улица и тако је доступна ученицима који
-                    наставу похађају у њој. Већина ученика не користи превоз. Како је школа смештена у
-                    Дому културе има добру сарадњу са истим по питању активности значајних за музички
-                    живот града: Свечане академије, Дан Светог Саве, Дечија недеља и др.
+                    Matična škola je smeštena u prostoru Doma kulture. Nalazi se na ušću
+                    Mileševke u reku Lim. Povezana je mrežom ulica i tako je dostupna učenicima koji
+                    nastavu pohađaju u njoj. Većina učenika ne koristi prevoz. Kako je škola smeštena u
+                    Domu kulture ima dobru saradnju sa istim po pitanju aktivnosti značajnih za muzički
+                    život grada: Svečane akademije, Dan Svetog Save, Dečija nedelja i dr.
                   </p>
                   <p>
-                    У непосредној близини школе налази се Основна школа „Владимир Перић Валтер"
-                    коју похађа 90% наших ученика. Недалеко од школе налази се Дечији вртић „Миша
-                    Цвијовић" са којим школа сарађује. У близини школе налазе се две приватне радио
-                    станице као и једна приватна телевизија које информишу јавност о активностима школе.
+                    U neposrednoj blizini škole nalazi se Osnovna škola „Vladimir Perić Valter"
+                    koju pohađa 90% naših učenika. Nedaleko od škole nalazi se Dečiji vrtić „Miša
+                    Cvijović" sa kojim škola sarađuje. U blizini škole nalaze se dve privatne radio
+                    stanice kao i jedna privatna televizija koje informišu javnost o aktivnostima škole.
                   </p>
                 </div>
               </CardContent>
@@ -105,23 +104,23 @@ const About = () => {
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center">
                   <Users className="h-8 w-8 text-blue-600 mr-3" />
-                  Издвојена одељења
+                  Izdvojena odeljenja
                 </h2>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
                   <p>
-                    Просторије у којима ради Издвојено одељење Прибој су у склопу Основне школе
-                    „Бранко Радичевић", а недалеко од Дома културе. Одељење својим радом даје свој
-                    допринос на свим културним манифестацијама на нивоу града.
+                    Prostorije u kojima radi Izdvojeno odeljenje Priboj su u sklopu Osnovne škole
+                    „Branko Radičević", a nedaleko od Doma kulture. Odeljenje svojim radom daje svoj
+                    doprinos na svim kulturnim manifestacijama na nivou grada.
                   </p>
                   <p>
-                    Настава у Издвојеном одељењу Нова Варош се најпре одвијала у просторијама
-                    Дечијег вртића „Паша и Наташа", а потом је додељен адекватан простор у простору
-                    ОШ „Живко Љујић". Стицајем околности остварује изузетну сарадњу са истом Основном
-                    школом као и са Домом културе.
+                    Nastava u Izdvojenom odeljenju Nova Varoš se najpre odvijala u prostorijama
+                    Dečijeg vrtića „Paša i Nataša", a potom je dodeljen adekvatan prostor u prostoru
+                    OŠ „Živko Ljuić". Sticajem okolnosti ostvaruje izuzetnu saradnju sa istom Osnovnom
+                    školom kao i sa Domom kulture.
                   </p>
                   <p>
-                    Састав ученика и радника школе је вишенационалан, а међуљудски односи су
-                    на високом нивоу.
+                    Sastav učenika i radnika škole je višeenacionalan, a međuljudski odnosi su
+                    na visokom nivou.
                   </p>
                 </div>
               </CardContent>
@@ -132,23 +131,23 @@ const About = () => {
               <CardContent className="p-8">
                 <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center">
                   <Trophy className="h-8 w-8 text-blue-600 mr-3" />
-                  Успеси и резултати
+                  Uspesi i rezultati
                 </h2>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
                   <p>
-                    Савесним радом наставника и одговорним залагањем ученика, школа постиже
-                    изузетне резултате на такмичењима као то су: Фестивал музичких школа Србије,
-                    Акордеон-арт, Звездане стазе, Такмичење клавирских дуета, Мали виртуоз, Дани
-                    хармонике-Смедерево, Пијанистичко такмичење у Ужицу, Музика у центру, Мех-фест,
-                    Међународни фестивал-Уб и др.
+                    Savesnim radom nastavnika i odgovornim zalaganjem učenika, škola postiže
+                    izuzetne rezultate na takmičenjima kao što su: Festival muzičkih škola Srbije,
+                    Akordeon-art, Zvezdane staze, Takmičenje klavirskih dueta, Mali virtouz, Dani
+                    harmonike-Smederevo, Pijanističko takmičenje u Užicu, Muzika u centru, Meh-fest,
+                    Međunarodni festival-Ub i dr.
                   </p>
                   <p>
-                    Свршени ученици нису заборавили школу и на адекватан начин помажу раду школе кроз
-                    донаторства и спонзорства, као и својим концертима.
+                    Svršeni učenici nisu zaboravili školu i na adekvatan način pomažu radu škole kroz
+                    donatorstva i sponzorstva, kao i svojim koncertima.
                   </p>
                   <p>
-                    Школа са издвојеним одељењима има 235 ученика који изучавају: клавир, хармонику и
-                    флауту.
+                    Škola sa izdvojenim odeljenjima ima 235 učenika koji izučavaju: klavir, harmoniku i
+                    flautu.
                   </p>
                 </div>
               </CardContent>
@@ -160,7 +159,7 @@ const About = () => {
                 <CardContent className="p-0">
                   <Users className="h-16 w-16 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-3xl font-bold text-gray-800 mb-2">235</h3>
-                  <p className="text-gray-600">Ученика у све три општине</p>
+                  <p className="text-gray-600">Učenika u sve tri opštine</p>
                 </CardContent>
               </Card>
               
@@ -168,7 +167,7 @@ const About = () => {
                 <CardContent className="p-0">
                   <MapPin className="h-16 w-16 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-3xl font-bold text-gray-800 mb-2">3</h3>
-                  <p className="text-gray-600">Општине које покривамо</p>
+                  <p className="text-gray-600">Opštine koje pokrivamo</p>
                 </CardContent>
               </Card>
               
@@ -176,7 +175,7 @@ const About = () => {
                 <CardContent className="p-0">
                   <Award className="h-16 w-16 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-3xl font-bold text-gray-800 mb-2">50+</h3>
-                  <p className="text-gray-600">Година традиције</p>
+                  <p className="text-gray-600">Godina tradicije</p>
                 </CardContent>
               </Card>
             </div>
@@ -203,7 +202,7 @@ const About = () => {
               <span className="text-xl font-bold">Muzička škola Prijepolje</span>
             </div>
             <p className="text-gray-400 mb-6">
-              Одгајамо нове генерације музичара кроз квалитетно образовање и креативно учење.
+              Odgajamo nove generacije muzičara kroz kvalitetno obrazovanje i kreativno učenje.
             </p>
             <Button 
               onClick={navigateHome}
