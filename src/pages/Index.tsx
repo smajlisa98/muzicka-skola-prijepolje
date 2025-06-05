@@ -6,6 +6,7 @@ import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent } from '@/components/ui/card';
 import { toast } from 'sonner';
+import { useNavigate } from 'react-router-dom';
 
 const Index = () => {
   const [formData, setFormData] = useState({
@@ -13,6 +14,8 @@ const Index = () => {
     email: '',
     message: ''
   });
+
+  const navigate = useNavigate();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     setFormData({
@@ -33,11 +36,11 @@ const Index = () => {
   };
 
   const navigateToGallery = () => {
-    window.location.href = '/gallery';
+    navigate("/gallery");
   };
 
   const navigateToAbout = () => {
-    window.location.href = '/about';
+    navigate("/about");
   };
 
   return (

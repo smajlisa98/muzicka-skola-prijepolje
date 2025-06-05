@@ -10,10 +10,13 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "@/components/ui/carousel";
+import { useNavigate } from 'react-router-dom';
 
 const Gallery = () => {
+  const navigate = useNavigate();
+
   const navigateHome = () => {
-    window.location.href = '/';
+    navigate("/");
   };
 
   const galleryImages = [

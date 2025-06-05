@@ -3,10 +3,13 @@ import React from 'react';
 import { ArrowLeft, Music, MapPin, Users, Award, Trophy } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
+import { useNavigate } from 'react-router-dom';
 
 const About = () => {
+  const navigate = useNavigate();
+
   const navigateHome = () => {
-    window.location.href = '/';
+    navigate("/");
   };
 
   return (
