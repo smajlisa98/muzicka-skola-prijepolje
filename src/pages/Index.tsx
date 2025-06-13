@@ -1,12 +1,392 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+
+import React, { useState } from 'react';
+import { Phone, Mail, MapPin, Music, Users, Award, Send, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
+import { Textarea } from '@/components/ui/textarea';
+import { Card, CardContent } from '@/components/ui/card';
+import { toast } from 'sonner';
 
 const Index = () => {
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    message: ''
+  });
+
+  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    });
+  };
+
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    toast.success('Vaša poruka je uspešno poslata! Kontaktiraćemo vas uskoro.');
+    setFormData({ name: '', email: '', message: '' });
+  };
+
+  const scrollToSection = (sectionId: string) => {
+    const element = document.getElementById(sectionId);
+    element?.scrollIntoView({ behavior: 'smooth' });
+  };
+
   return (
-    <div className="min-h-screen flex items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="text-4xl font-bold mb-4">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
-      </div>
+    <div className="min-h-screen bg-white">
+      {/* Navigation */}
+      <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
+        <div className="container mx-auto px-4 py-4">
+          <div className="flex justify-between items-center">
+            <div className="flex items-center space-x-2">
+              <Music className="h-8 w-8 text-blue-600" />
+              <span className="text-xl font-bold text-gray-800">Muzička škola Prijepolje</span>
+            </div>
+            <div className="hidden md:flex space-x-6">
+              <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-blue-600 transition-colors">Početna</button>
+              <button onClick={() => scrollToSection('about')} className="text-gray-600 hover:text-blue-600 transition-colors">O nama</button>
+              <button onClick={() => scrollToSection('programs')} className="text-gray-600 hover:text-blue-600 transition-colors">Programi</button>
+              <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-blue-600 transition-colors">Kontakt</button>
+            </div>
+          </div>
+        </div>
+      </nav>
+
+      {/* Hero Section */}
+      <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
+        <div 
+          className="absolute inset-0 bg-gradient-to-br from-blue-900/90 to-purple-900/90"
+          style={{
+            backgroundImage: `url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundSize: 'cover',
+            backgroundPosition: 'center',
+            backgroundAttachment: 'fixed'
+          }}
+        />
+        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto animate-fade-in">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 leading-tight">
+            Muzička škola
+            <span className="block text-yellow-300">Prijepolje</span>
+          </h1>
+          <p className="text-xl md:text-2xl mb-8 opacity-90">Tamo gde muzika počinje</p>
+          <p className="text-lg mb-10 opacity-80 max-w-2xl mx-auto">
+            Otkrivamo talente, razvijamo kreativnost i stvaramo budućnost kroz moć muzike
+          </p>
+          <Button 
+            onClick={() => scrollToSection('about')}
+            className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 text-lg rounded-full transition-all duration-300 hover:scale-105"
+          >
+            Saznajte više
+          </Button>
+        </div>
+        <div className="absolute bottom-10 left-1/2 transform -translate-x-1/2 animate-bounce">
+          <div className="w-6 h-10 border-2 border-white rounded-full flex justify-center">
+            <div className="w-1 h-3 bg-white rounded-full mt-2 animate-pulse"></div>
+          </div>
+        </div>
+      </section>
+
+      {/* About Section */}
+      <section id="about" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <div className="text-center mb-16 animate-fade-in">
+              <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">O nama</h2>
+              <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-12 items-center mb-16">
+              <div className="animate-fade-in">
+                <h3 className="text-2xl font-semibold text-gray-800 mb-6">Naša misija</h3>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Muzička škola Prijepolje je renomirana institucija osnovana 1967. godine sa ciljem 
+                  da pruži kvalitetno muzičko obrazovanje i razvije ljubav prema muzici kod mladih.
+                </p>
+                <p className="text-gray-600 mb-6 leading-relaxed">
+                  Kroz decenije rada, naša škola je odgojila brojne talentovane muzičare koji danas 
+                  nastavljaju svoje karijere u prestižnim institucijama širom sveta.
+                </p>
+                <p className="text-gray-600 leading-relaxed">
+                  Naš pristup kombinuje tradicionalne metode učenja sa modernim tehnologijama, 
+                  omogućavajući učenicima da razviju svoje veštine u inspirativnom okruženju.
+                </p>
+              </div>
+              
+              <div className="grid grid-cols-2 gap-6 animate-fade-in">
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+                  <CardContent className="p-0">
+                    <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                    <h4 className="text-2xl font-bold text-gray-800 mb-2">500+</h4>
+                    <p className="text-gray-600">Učenika</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+                  <CardContent className="p-0">
+                    <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                    <h4 className="text-2xl font-bold text-gray-800 mb-2">50+</h4>
+                    <p className="text-gray-600">Godina iskustva</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+                  <CardContent className="p-0">
+                    <Music className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                    <h4 className="text-2xl font-bold text-gray-800 mb-2">15</h4>
+                    <p className="text-gray-600">Nastavnika</p>
+                  </CardContent>
+                </Card>
+                
+                <Card className="text-center p-6 hover:shadow-lg transition-shadow">
+                  <CardContent className="p-0">
+                    <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                    <h4 className="text-2xl font-bold text-gray-800 mb-2">100+</h4>
+                    <p className="text-gray-600">Nagrada</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Programs Section */}
+      <section id="programs" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Naši programi</h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Otkrijte savršen program za vaš muzički put
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                title: 'Klavir',
+                description: 'Osnove klavira do naprednih tehnika. Individualni pristup svakom učeniku.',
+                icon: '🎹',
+                duration: '4-8 godina'
+              },
+              {
+                title: 'Violina',
+                description: 'Klasična obuka violine sa fokusom na tehniku i muzikalnost.',
+                icon: '🎻',
+                duration: '6-8 godina'
+              },
+              {
+                title: 'Gitara',
+                description: 'Akustična i električna gitara. Klasični i savremeni stilovi.',
+                icon: '🎸',
+                duration: '4-6 godina'
+              },
+              {
+                title: 'Flauta',
+                description: 'Duvački instrumenti sa naglaskom na klasičnu muziku.',
+                icon: '🎵',
+                duration: '4-6 godina'
+              },
+              {
+                title: 'Solo pevanje',
+                description: 'Razvoj glasa, tehnike disanja i interpretacije.',
+                icon: '🎤',
+                duration: '4-6 godina'
+              },
+              {
+                title: 'Muzička teorija',
+                description: 'Solfeggio, harmonija i istorija muzike.',
+                icon: '📚',
+                duration: '6-8 godina'
+              }
+            ].map((program, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in group">
+                <CardContent className="p-8 text-center">
+                  <div className="text-4xl mb-4 group-hover:scale-110 transition-transform duration-300">
+                    {program.icon}
+                  </div>
+                  <h3 className="text-xl font-semibold text-gray-800 mb-4">{program.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed">{program.description}</p>
+                  <div className="text-sm text-blue-600 font-medium">
+                    Trajanje: {program.duration}
+                  </div>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Contact Section */}
+      <section id="contact" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Kontakt</h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600">Spremni smo da odgovorimo na sva vaša pitanja</p>
+          </div>
+          
+          <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
+            {/* Contact Form */}
+            <div className="animate-fade-in">
+              <Card className="shadow-lg">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-6">Pošaljite nam poruku</h3>
+                  <form onSubmit={handleSubmit} className="space-y-6">
+                    <div>
+                      <label className="block text-gray-700 font-medium mb-2">Ime i prezime</label>
+                      <Input
+                        type="text"
+                        name="name"
+                        value={formData.name}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="Vaše ime i prezime"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700 font-medium mb-2">Email adresa</label>
+                      <Input
+                        type="email"
+                        name="email"
+                        value={formData.email}
+                        onChange={handleInputChange}
+                        required
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
+                        placeholder="vaš@email.com"
+                      />
+                    </div>
+                    <div>
+                      <label className="block text-gray-700 font-medium mb-2">Poruka</label>
+                      <Textarea
+                        name="message"
+                        value={formData.message}
+                        onChange={handleInputChange}
+                        required
+                        rows={4}
+                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
+                        placeholder="Vaša poruka..."
+                      />
+                    </div>
+                    <Button 
+                      type="submit"
+                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
+                    >
+                      <Send className="h-5 w-5" />
+                      <span>Pošaljite poruku</span>
+                    </Button>
+                  </form>
+                </CardContent>
+              </Card>
+            </div>
+            
+            {/* Contact Information */}
+            <div className="animate-fade-in space-y-8">
+              <Card className="shadow-lg">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-6">Informacije o kontaktu</h3>
+                  <div className="space-y-6">
+                    <div className="flex items-start space-x-4">
+                      <Phone className="h-6 w-6 text-blue-600 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800">Telefon</h4>
+                        <p className="text-gray-600">+381 33 710 123</p>
+                        <p className="text-gray-600">+381 33 710 124</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <Mail className="h-6 w-6 text-blue-600 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800">Email</h4>
+                        <p className="text-gray-600">info@muzickaskola-prijepolje.rs</p>
+                        <p className="text-gray-600">direktor@muzickaskola-prijepolje.rs</p>
+                      </div>
+                    </div>
+                    
+                    <div className="flex items-start space-x-4">
+                      <MapPin className="h-6 w-6 text-blue-600 mt-1" />
+                      <div>
+                        <h4 className="font-semibold text-gray-800">Adresa</h4>
+                        <p className="text-gray-600">Svetog Save 15</p>
+                        <p className="text-gray-600">31300 Prijepolje, Srbija</p>
+                      </div>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+              
+              <Card className="shadow-lg">
+                <CardContent className="p-8">
+                  <h3 className="text-2xl font-semibold text-gray-800 mb-6">Radno vreme</h3>
+                  <div className="space-y-3">
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Ponedeljak - Petak</span>
+                      <span className="font-semibold text-gray-800">08:00 - 20:00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Subota</span>
+                      <span className="font-semibold text-gray-800">09:00 - 15:00</span>
+                    </div>
+                    <div className="flex justify-between">
+                      <span className="text-gray-600">Nedelja</span>
+                      <span className="font-semibold text-gray-800">Zatvoreno</span>
+                    </div>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-gray-900 text-white py-12">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <Music className="h-8 w-8 text-yellow-400" />
+                <span className="text-xl font-bold">Muzička škola Prijepolje</span>
+              </div>
+              <p className="text-gray-400 leading-relaxed">
+                Odgajamo nove generacije muzičara kroz kvalitetno obrazovanje i kreativno učenje.
+              </p>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Brze veze</h4>
+              <div className="space-y-2">
+                <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-white transition-colors">O nama</button>
+                <button onClick={() => scrollToSection('programs')} className="block text-gray-400 hover:text-white transition-colors">Programi</button>
+                <button onClick={() => scrollToSection('contact')} className="block text-gray-400 hover:text-white transition-colors">Kontakt</button>
+              </div>
+            </div>
+            
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Pratite nas</h4>
+              <div className="flex space-x-4">
+                <a href="#" className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform">
+                  <Facebook className="h-6 w-6" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform">
+                  <Instagram className="h-6 w-6" />
+                </a>
+                <a href="#" className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform">
+                  <Twitter className="h-6 w-6" />
+                </a>
+              </div>
+            </div>
+          </div>
+          
+          <div className="border-t border-gray-800 pt-8 text-center">
+            <p className="text-gray-400">
+              © 2024 Muzička škola Prijepolje. Sva prava zadržana.
+            </p>
+          </div>
+        </div>
+      </footer>
     </div>
   );
 };
