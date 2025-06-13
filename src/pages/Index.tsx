@@ -1,6 +1,5 @@
-
 import React, { useState } from 'react';
-import { Phone, Mail, MapPin, Music, Users, Award, Send, Facebook, Instagram, Twitter } from 'lucide-react';
+import { Phone, Mail, MapPin, Music, Users, Award, Send, Facebook, Instagram, Twitter, Calendar, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
@@ -32,6 +31,10 @@ const Index = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
+  const navigateToGallery = () => {
+    window.location.href = '/gallery';
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -46,6 +49,8 @@ const Index = () => {
               <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-blue-600 transition-colors">Početna</button>
               <button onClick={() => scrollToSection('about')} className="text-gray-600 hover:text-blue-600 transition-colors">O nama</button>
               <button onClick={() => scrollToSection('programs')} className="text-gray-600 hover:text-blue-600 transition-colors">Programi</button>
+              <button onClick={() => scrollToSection('news')} className="text-gray-600 hover:text-blue-600 transition-colors">Vesti</button>
+              <button onClick={navigateToGallery} className="text-gray-600 hover:text-blue-600 transition-colors">Galerija</button>
               <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-blue-600 transition-colors">Kontakt</button>
             </div>
           </div>
@@ -55,9 +60,9 @@ const Index = () => {
       {/* Hero Section */}
       <section id="home" className="relative h-screen flex items-center justify-center overflow-hidden">
         <div 
-          className="absolute inset-0 bg-gradient-to-br from-blue-900/90 to-purple-900/90"
+          className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-purple-900/80"
           style={{
-            backgroundImage: `url('https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')`,
+            backgroundImage: `url('/lovable-uploads/c1deecac-499e-44dd-a005-5aa7e3601b35.png')`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'
@@ -217,6 +222,76 @@ const Index = () => {
         </div>
       </section>
 
+      {/* News Section */}
+      <section id="news" className="py-20 bg-gray-50">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Vesti</h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Pratite najnovije vesti o koncertima, nagradama i aktivnostima naše škole
+            </p>
+          </div>
+          
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            {[
+              {
+                title: 'Uspešan koncert učenika',
+                date: '15. decembar 2024',
+                description: 'Naši učenici su održali izvanredan koncert u gradskom pozorištu pred brojnom publikom.',
+                category: 'Koncert'
+              },
+              {
+                title: 'Prva nagrada na republičkom takmičenju',
+                date: '10. decembar 2024',
+                description: 'Ana Marić, učenica klavira, osvojila je prvo mesto na republičkom takmičenju mladih muzičara.',
+                category: 'Nagrada'
+              },
+              {
+                title: 'Otvorene prijave za novu školsku godinu',
+                date: '5. decembar 2024',
+                description: 'Počele su prijave za upis novih učenika u školsku 2024/25 godinu. Pridružite nam se!',
+                category: 'Upis'
+              },
+              {
+                title: 'Novi instrumenti u školi',
+                date: '28. novembar 2024',
+                description: 'Zahvaljujući donaciji grada, škola je obogaćena novim klavirima i violinama.',
+                category: 'Oprema'
+              },
+              {
+                title: 'Muzički workshop za decu',
+                date: '20. novembar 2024',
+                description: 'Organizovali smo besplatan workshop za decu uzrasta 5-8 godina.',
+                category: 'Događaj'
+              },
+              {
+                title: 'Jubilej škole - 57 godina rada',
+                date: '15. novembar 2024',
+                description: 'Obeležili smo 57 godina uspešnog rada i obrazovanja mladih muzičara.',
+                category: 'Jubilej'
+              }
+            ].map((news, index) => (
+              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in group">
+                <CardContent className="p-6">
+                  <div className="flex items-center mb-3">
+                    <Calendar className="h-4 w-4 text-blue-600 mr-2" />
+                    <span className="text-sm text-gray-500">{news.date}</span>
+                    <span className="ml-auto bg-blue-100 text-blue-600 px-2 py-1 rounded-full text-xs">
+                      {news.category}
+                    </span>
+                  </div>
+                  <h3 className="text-lg font-semibold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
+                    {news.title}
+                  </h3>
+                  <p className="text-gray-600 leading-relaxed">{news.description}</p>
+                </CardContent>
+              </Card>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Contact Section */}
       <section id="contact" className="py-20 bg-gray-50">
         <div className="container mx-auto px-4">
@@ -360,6 +435,8 @@ const Index = () => {
               <div className="space-y-2">
                 <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-white transition-colors">O nama</button>
                 <button onClick={() => scrollToSection('programs')} className="block text-gray-400 hover:text-white transition-colors">Programi</button>
+                <button onClick={() => scrollToSection('news')} className="block text-gray-400 hover:text-white transition-colors">Vesti</button>
+                <button onClick={navigateToGallery} className="block text-gray-400 hover:text-white transition-colors">Galerija</button>
                 <button onClick={() => scrollToSection('contact')} className="block text-gray-400 hover:text-white transition-colors">Kontakt</button>
               </div>
             </div>
