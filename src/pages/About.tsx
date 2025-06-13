@@ -81,7 +81,7 @@ const About = () => {
                 </h2>
                 <div className="space-y-4 text-gray-600 leading-relaxed">
                   <p>
-                    Матична школа је смештена у простору Дома культуре. Налази се на ушћу
+                    Матична школа је смештена у простору Дома културе. Налази се на ушћу
                     Милешевке у реку Лим. Повезана је мрежом улица и тако је доступна ученицима који
                     наставу похађају у њој. Већина ученика не користи превоз. Како је школа смештена у
                     Дому културе има добру сарадњу са истим по питању активности значајних за музички
@@ -154,7 +154,7 @@ const About = () => {
             {/* Stats Grid */}
             <div className="grid md:grid-cols-3 gap-8 mb-12 animate-fade-in">
               <Card className="text-center p-6 hover:shadow-lg transition-shadow">
-                <Car dContent className="p-0">
+                <CardContent className="p-0">
                   <Users className="h-16 w-16 text-blue-600 mx-auto mb-4" />
                   <h3 className="text-3xl font-bold text-gray-800 mb-2">235</h3>
                   <p className="text-gray-600">Ученика у све три општине</p>
