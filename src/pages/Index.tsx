@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Phone, Mail, MapPin, Music, Users, Award, Send, Facebook, Instagram, Twitter, Calendar, Camera } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -35,6 +36,10 @@ const Index = () => {
     window.location.href = '/gallery';
   };
 
+  const navigateToAbout = () => {
+    window.location.href = '/about';
+  };
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -47,7 +52,7 @@ const Index = () => {
             </div>
             <div className="hidden md:flex space-x-6">
               <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-blue-600 transition-colors">Početna</button>
-              <button onClick={() => scrollToSection('about')} className="text-gray-600 hover:text-blue-600 transition-colors">O nama</button>
+              <button onClick={navigateToAbout} className="text-gray-600 hover:text-blue-600 transition-colors">O školi</button>
               <button onClick={() => scrollToSection('programs')} className="text-gray-600 hover:text-blue-600 transition-colors">Programi</button>
               <button onClick={() => scrollToSection('news')} className="text-gray-600 hover:text-blue-600 transition-colors">Vesti</button>
               <button onClick={navigateToGallery} className="text-gray-600 hover:text-blue-600 transition-colors">Galerija</button>
@@ -78,7 +83,7 @@ const Index = () => {
             Otkrivamo talente, razvijamo kreativnost i stvaramo budućnost kroz moć muzike
           </p>
           <Button 
-            onClick={() => scrollToSection('about')}
+            onClick={navigateToAbout}
             className="bg-yellow-500 hover:bg-yellow-600 text-black font-semibold px-8 py-3 text-lg rounded-full transition-all duration-300 hover:scale-105"
           >
             Saznajte više
@@ -104,24 +109,26 @@ const Index = () => {
               <div className="animate-fade-in">
                 <h3 className="text-2xl font-semibold text-gray-800 mb-6">Naša misija</h3>
                 <p className="text-gray-600 mb-6 leading-relaxed">
-                  Muzička škola Prijepolje je renomirana institucija osnovana 1967. godine sa ciljem 
-                  da pruži kvalitetno muzičko obrazovanje i razvije ljubav prema muzici kod mladih.
+                  Osnovna muzička škola Prijepolje osnovana je 1971. godine i ima bogatu tradiciju muzičkog obrazovanja mladih.
                 </p>
                 <p className="text-gray-600 mb-6 leading-relaxed">
                   Kroz decenije rada, naša škola je odgojila brojne talentovane muzičare koji danas 
                   nastavljaju svoje karijere u prestižnim institucijama širom sveta.
                 </p>
-                <p className="text-gray-600 leading-relaxed">
-                  Naš pristup kombinuje tradicionalne metode učenja sa modernim tehnologijama, 
-                  omogućavajući učenicima da razviju svoje veštine u inspirativnom okruženju.
-                </p>
+                <Button 
+                  onClick={navigateToAbout}
+                  variant="outline"
+                  className="hover:bg-blue-600 hover:text-white transition-all duration-300"
+                >
+                  Detaljnije o školi
+                </Button>
               </div>
               
               <div className="grid grid-cols-2 gap-6 animate-fade-in">
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow">
                   <CardContent className="p-0">
                     <Users className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                    <h4 className="text-2xl font-bold text-gray-800 mb-2">500+</h4>
+                    <h4 className="text-2xl font-bold text-gray-800 mb-2">235</h4>
                     <p className="text-gray-600">Učenika</p>
                   </CardContent>
                 </Card>
@@ -130,15 +137,15 @@ const Index = () => {
                   <CardContent className="p-0">
                     <Award className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                     <h4 className="text-2xl font-bold text-gray-800 mb-2">50+</h4>
-                    <p className="text-gray-600">Godina iskustva</p>
+                    <p className="text-gray-600">Godina tradicije</p>
                   </CardContent>
                 </Card>
                 
                 <Card className="text-center p-6 hover:shadow-lg transition-shadow">
                   <CardContent className="p-0">
                     <Music className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                    <h4 className="text-2xl font-bold text-gray-800 mb-2">15</h4>
-                    <p className="text-gray-600">Nastavnika</p>
+                    <h4 className="text-2xl font-bold text-gray-800 mb-2">3</h4>
+                    <p className="text-gray-600">Odeljenja</p>
                   </CardContent>
                 </Card>
                 
@@ -175,16 +182,10 @@ const Index = () => {
                 duration: '4-8 godina'
               },
               {
-                title: 'Violina',
-                description: 'Klasična obuka violine sa fokusom na tehniku i muzikalnost.',
-                icon: '🎻',
-                duration: '6-8 godina'
-              },
-              {
-                title: 'Gitara',
-                description: 'Akustična i električna gitara. Klasični i savremeni stilovi.',
-                icon: '🎸',
-                duration: '4-6 godina'
+                title: 'Harmonika',
+                description: 'Učenje harmonike kroz različite stilove i tehnike sviranja.',
+                icon: '🪗',
+                duration: '4-8 godina'
               },
               {
                 title: 'Flauta',
@@ -193,16 +194,16 @@ const Index = () => {
                 duration: '4-6 godina'
               },
               {
-                title: 'Solo pevanje',
-                description: 'Razvoj glasa, tehnike disanja i interpretacije.',
-                icon: '🎤',
-                duration: '4-6 godina'
+                title: 'Muzička teorija',
+                description: 'Solfeggio, harmonija i osnove muzičke teorije.',
+                icon: '📚',
+                duration: '1 godina'
               },
               {
-                title: 'Muzička teorija',
-                description: 'Solfeggio, harmonija i istorija muzike.',
-                icon: '📚',
-                duration: '6-8 godina'
+                title: 'Horsko pevanje',
+                description: 'Razvoj glasa kroz horsko pevanje i muzičko izražavanje.',
+                icon: '🎤',
+                duration: '6-7 godina'
               }
             ].map((program, index) => (
               <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in group">
@@ -366,8 +367,8 @@ const Index = () => {
                       <Phone className="h-6 w-6 text-blue-600 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Telefon</h4>
-                        <p className="text-gray-600">+381 33 710 123</p>
-                        <p className="text-gray-600">+381 33 710 124</p>
+                        <p className="text-gray-600">033/712-860</p>
+                        <p className="text-gray-600">033/710-150</p>
                       </div>
                     </div>
                     
@@ -375,8 +376,7 @@ const Index = () => {
                       <Mail className="h-6 w-6 text-blue-600 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Email</h4>
-                        <p className="text-gray-600">info@muzickaskola-prijepolje.rs</p>
-                        <p className="text-gray-600">direktor@muzickaskola-prijepolje.rs</p>
+                        <p className="text-gray-600">muzskola@mts.rs</p>
                       </div>
                     </div>
                     
@@ -384,8 +384,8 @@ const Index = () => {
                       <MapPin className="h-6 w-6 text-blue-600 mt-1" />
                       <div>
                         <h4 className="font-semibold text-gray-800">Adresa</h4>
-                        <p className="text-gray-600">Svetog Save 15</p>
-                        <p className="text-gray-600">31300 Prijepolje, Srbija</p>
+                        <p className="text-gray-600">Санџачких бригада бр.2</p>
+                        <p className="text-gray-600">31300 Пријепоље, Србија</p>
                       </div>
                     </div>
                   </div>
@@ -433,7 +433,7 @@ const Index = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Brze veze</h4>
               <div className="space-y-2">
-                <button onClick={() => scrollToSection('about')} className="block text-gray-400 hover:text-white transition-colors">O nama</button>
+                <button onClick={navigateToAbout} className="block text-gray-400 hover:text-white transition-colors">O školi</button>
                 <button onClick={() => scrollToSection('programs')} className="block text-gray-400 hover:text-white transition-colors">Programi</button>
                 <button onClick={() => scrollToSection('news')} className="block text-gray-400 hover:text-white transition-colors">Vesti</button>
                 <button onClick={navigateToGallery} className="block text-gray-400 hover:text-white transition-colors">Galerija</button>
