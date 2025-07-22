@@ -117,10 +117,14 @@ const Index = () => {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <div className="flex items-center space-x-2">
-              <Music className="h-8 w-8 text-blue-600" />
+            <a href="/" className="flex items-center space-x-2">
+              <img
+                src={`${import.meta.env.BASE_URL}muzicka-skola-pp-logo.png`}
+                alt="Logo Muzičke škole"
+                className="h-10 w-auto"
+              />
               <span className="text-xl font-bold text-gray-800">Muzička škola Prijepolje</span>
-            </div>
+            </a>
             <div className="hidden md:flex space-x-6">
               <button onClick={() => scrollToSection('home')} className="text-gray-600 hover:text-blue-600 transition-colors">Početna</button>
               <button onClick={navigateToAbout} className="text-gray-600 hover:text-blue-600 transition-colors">O školi</button>
@@ -530,7 +534,11 @@ const Index = () => {
           <div className="grid md:grid-cols-3 gap-8 mb-8">
             <div>
               <div className="flex items-center space-x-2 mb-4">
-                <Music className="h-8 w-8 text-yellow-400" />
+                <img
+                  src={`${import.meta.env.BASE_URL}muzicka-skola-pp-logo.png`}
+                  alt="Logo Muzičke škole"
+                  className="h-10 w-auto"
+                />
                 <span className="text-xl font-bold">Muzička škola Prijepolje</span>
               </div>
               <p className="text-gray-400 leading-relaxed">
