@@ -415,116 +415,60 @@ const Index = () => {
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12 max-w-6xl mx-auto">
-            {/* Contact Form */}
-            <div className="animate-fade-in">
-              <Card className="shadow-lg">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-6">Pošaljite nam poruku</h3>
-                  <form onSubmit={handleSubmit} className="space-y-6">
+            {/* Contact Info */}
+            <Card className="shadow-lg animate-fade-in">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-semibold text-gray-800 mb-6">Informacije o kontaktu</h3>
+                <div className="space-y-6">
+                  <div className="flex items-start space-x-4">
+                    <Phone className="h-6 w-6 text-blue-600 mt-1" />
                     <div>
-                      <label className="block text-gray-700 font-medium mb-2">Ime i prezime</label>
-                      <Input
-                        type="text"
-                        name="name"
-                        value={formData.name}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="Vaše ime i prezime"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 font-medium mb-2">Email adresa</label>
-                      <Input
-                        type="email"
-                        name="email"
-                        value={formData.email}
-                        onChange={handleInputChange}
-                        required
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all"
-                        placeholder="vaš@email.com"
-                      />
-                    </div>
-                    <div>
-                      <label className="block text-gray-700 font-medium mb-2">Poruka</label>
-                      <Textarea
-                        name="message"
-                        value={formData.message}
-                        onChange={handleInputChange}
-                        required
-                        rows={4}
-                        className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent transition-all resize-none"
-                        placeholder="Vaša poruka..."
-                      />
-                    </div>
-                    <Button 
-                      type="submit"
-                      className="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 rounded-lg transition-all duration-300 hover:scale-105 flex items-center justify-center space-x-2"
-                    >
-                      <Send className="h-5 w-5" />
-                      <span>Pošaljite poruku</span>
-                    </Button>
-                  </form>
-                </CardContent>
-              </Card>
-            </div>
-            
-            {/* Contact Information */}
-            <div className="animate-fade-in space-y-8">
-              <Card className="shadow-lg">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-6">Informacije o kontaktu</h3>
-                  <div className="space-y-6">
-                    <div className="flex items-start space-x-4">
-                      <Phone className="h-6 w-6 text-blue-600 mt-1" />
-                      <div>
-                        <h4 className="font-semibold text-gray-800">Telefon</h4>
-                        <p className="text-gray-600">033/712-860</p>
-                        <p className="text-gray-600">033/710-150</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-4">
-                      <Mail className="h-6 w-6 text-blue-600 mt-1" />
-                      <div>
-                        <h4 className="font-semibold text-gray-800">Email</h4>
-                        <p className="text-gray-600">muzskola@mts.rs</p>
-                      </div>
-                    </div>
-                    
-                    <div className="flex items-start space-x-4">
-                      <MapPin className="h-6 w-6 text-blue-600 mt-1" />
-                      <div>
-                        <h4 className="font-semibold text-gray-800">Adresa</h4>
-                        <p className="text-gray-600">Санџачких бригада бр.2</p>
-                        <p className="text-gray-600">31300 Пријепоље, Србија</p>
-                      </div>
+                      <h4 className="font-semibold text-gray-800">Telefon</h4>
+                      <p className="text-gray-600">033/712-860</p>
+                      <p className="text-gray-600">033/710-150</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-              
-              <Card className="shadow-lg">
-                <CardContent className="p-8">
-                  <h3 className="text-2xl font-semibold text-gray-800 mb-6">Radno vreme</h3>
-                  <div className="space-y-3">
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Ponedeljak - Petak</span>
-                      <span className="font-semibold text-gray-800">08:00 - 20:00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Subota</span>
-                      <span className="font-semibold text-gray-800">09:00 - 15:00</span>
-                    </div>
-                    <div className="flex justify-between">
-                      <span className="text-gray-600">Nedelja</span>
-                      <span className="font-semibold text-gray-800">Zatvoreno</span>
+                  <div className="flex items-start space-x-4">
+                    <Mail className="h-6 w-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Email</h4>
+                      <p className="text-gray-600">muzskola@mts.rs</p>
                     </div>
                   </div>
-                </CardContent>
-              </Card>
-            </div>
+                  <div className="flex items-start space-x-4">
+                    <MapPin className="h-6 w-6 text-blue-600 mt-1" />
+                    <div>
+                      <h4 className="font-semibold text-gray-800">Adresa</h4>
+                      <p className="text-gray-600">Санџачких бригада бр.2</p>
+                      <p className="text-gray-600">31300 Пријепоље, Србија</p>
+                    </div>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
+
+            {/* Working Hours */}
+            <Card className="shadow-lg animate-fade-in">
+              <CardContent className="p-8">
+                <h3 className="text-2xl font-semibold text-gray-800 mb-6">Radno vreme</h3>
+                <div className="space-y-3">
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Ponedeljak - Petak</span>
+                    <span className="font-semibold text-gray-800">07:00 - 15:00</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Subota</span>
+                    <span className="font-semibold text-gray-800">Zatvoreno</span>
+                  </div>
+                  <div className="flex justify-between">
+                    <span className="text-gray-600">Nedelja</span>
+                    <span className="font-semibold text-gray-800">Zatvoreno</span>
+                  </div>
+                </div>
+              </CardContent>
+            </Card>
           </div>
+
         </div>
       </section>
 
@@ -547,7 +491,6 @@ const Index = () => {
             </div>
             
             <div>
-              <h4 className="text-lg font-semibold mb-4">Brze veze</h4>
               <div className="space-y-2">
                 <button onClick={navigateToAbout} className="block text-gray-400 hover:text-white transition-colors">O školi</button>
                 <button onClick={() => scrollToSection('programs')} className="block text-gray-400 hover:text-white transition-colors">Programi</button>
@@ -560,14 +503,8 @@ const Index = () => {
             <div>
               <h4 className="text-lg font-semibold mb-4">Pratite nas</h4>
               <div className="flex space-x-4">
-                <a href="#" className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform">
+                <a href="https://www.facebook.com/muzickaskolaprijepolje/" className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform" target="_blank">
                   <Facebook className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform">
-                  <Instagram className="h-6 w-6" />
-                </a>
-                <a href="#" className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform">
-                  <Twitter className="h-6 w-6" />
                 </a>
               </div>
             </div>
@@ -575,7 +512,7 @@ const Index = () => {
           
           <div className="border-t border-gray-800 pt-8 text-center">
             <p className="text-gray-400">
-              © 2024 Muzička škola Prijepolje. Sva prava zadržana.
+              © 2025 DEVNINE. Sva prava zadržana.
             </p>
           </div>
         </div>
