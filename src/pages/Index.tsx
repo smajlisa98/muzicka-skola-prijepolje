@@ -35,9 +35,9 @@ const Index = () => {
     element?.scrollIntoView({ behavior: 'smooth' });
   };
 
-  const navigateToGallery = () => {
-    navigate("/gallery");
-  };
+  // const navigateToGallery = () => {
+  //   navigate("/gallery");
+  // };
 
   const navigateToAbout = () => {
     navigate("/about");
@@ -58,7 +58,7 @@ const Index = () => {
               <button onClick={navigateToAbout} className="text-gray-600 hover:text-blue-600 transition-colors">O školi</button>
               <button onClick={() => scrollToSection('programs')} className="text-gray-600 hover:text-blue-600 transition-colors">Programi</button>
               <button onClick={() => scrollToSection('news')} className="text-gray-600 hover:text-blue-600 transition-colors">Vesti</button>
-              <button onClick={navigateToGallery} className="text-gray-600 hover:text-blue-600 transition-colors">Galerija</button>
+              {/* <button onClick={navigateToGallery} className="text-gray-600 hover:text-blue-600 transition-colors">Galerija</button> */}
               <button onClick={() => scrollToSection('contact')} className="text-gray-600 hover:text-blue-600 transition-colors">Kontakt</button>
             </div>
           </div>
@@ -182,19 +182,19 @@ const Index = () => {
                 title: 'Klavir',
                 description: 'Osnove klavira do naprednih tehnika. Individualni pristup svakom učeniku.',
                 icon: '🎹',
-                duration: '4-8 godina'
+                duration: '6 godina'
               },
               {
                 title: 'Harmonika',
                 description: 'Učenje harmonike kroz različite stilove i tehnike sviranja.',
                 icon: '🪗',
-                duration: '4-8 godina'
+                duration: '6 godina'
               },
               {
                 title: 'Flauta',
                 description: 'Duvački instrumenti sa naglaskom na klasičnu muziku.',
                 icon: '🎵',
-                duration: '4-6 godina'
+                duration: '6 godina'
               },
               {
                 title: 'Muzička teorija',
@@ -439,7 +439,7 @@ const Index = () => {
                 <button onClick={navigateToAbout} className="block text-gray-400 hover:text-white transition-colors">O školi</button>
                 <button onClick={() => scrollToSection('programs')} className="block text-gray-400 hover:text-white transition-colors">Programi</button>
                 <button onClick={() => scrollToSection('news')} className="block text-gray-400 hover:text-white transition-colors">Vesti</button>
-                <button onClick={navigateToGallery} className="block text-gray-400 hover:text-white transition-colors">Galerija</button>
+                {/* <button onClick={navigateToGallery} className="block text-gray-400 hover:text-white transition-colors">Galerija</button> */}
                 <button onClick={() => scrollToSection('contact')} className="block text-gray-400 hover:text-white transition-colors">Kontakt</button>
               </div>
             </div>
