@@ -17,14 +17,14 @@ const About = () => {
       <nav className="fixed top-0 w-full bg-white/95 backdrop-blur-sm z-50 shadow-sm">
         <div className="container mx-auto px-4 py-4">
           <div className="flex justify-between items-center">
-            <a href="/"  className="flex items-center space-x-2">
+            <div className="flex items-center space-x-2">
               <img
                 src={`${import.meta.env.BASE_URL}muzicka-skola-pp-logo.png`}
                 alt="Logo Muzičke škole"
                 className="h-10 w-auto"
               />
               <span className="text-xl font-bold text-gray-800">Muzička škola Prijepolje</span>
-            </a>
+            </div>
             <Button 
               onClick={navigateHome}
               variant="outline"
