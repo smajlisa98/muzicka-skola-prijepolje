@@ -47,23 +47,23 @@ const Index = () => {
 
   const galleryImages = [
     {
-      url: `url(${import.meta.env.BASE_URL}20250722_175935.jpg)`,
+      url: `${import.meta.env.BASE_URL}20250722_175935.jpg`,
       title: 'Donacija Udruženja Vivarta',
     },
     {
-      url: `url(${import.meta.env.BASE_URL}20250722_180003.jpg)`,
+      url: `${import.meta.env.BASE_URL}20250722_180009.jpg`,
       title: 'Donacija Udruženja Vivarta',
     },
     {
-      url: `url(${import.meta.env.BASE_URL}20250722_180009.jpg)`,
-      title: 'Donacija Udruženja Vivarta',
+      url: `${import.meta.env.BASE_URL}20250722_180003.jpg`,
+      title: 'Donacija predsednika opštine',
     },
     {
-      url: `url(${import.meta.env.BASE_URL}20250722_180015.jpg)`,
+      url: `${import.meta.env.BASE_URL}20250722_180015.jpg`,
       title: 'Dodela plakete školi',
     },
     {
-      url: `url(${import.meta.env.BASE_URL}20250722_180021.jpg)`,
+      url: `${import.meta.env.BASE_URL}20250722_180021.jpg`,
       title: 'Dodela plakete školi za 20 godina uspešnog rada IO Nova Varoš',
     },
   ];
@@ -344,7 +344,7 @@ const Index = () => {
                         className="max-w-full max-h-full object-contain bg-transparent"
                       />
                     </div>
-                    <div className="p-4 bg-gray-100">
+                    <div className="p-4 bg-gray-100 text-center">
                       <h3 className="text-lg font-semibold text-gray-800">{image.title}</h3>
                     </div>
                   </div>
