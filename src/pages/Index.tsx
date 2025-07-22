@@ -73,11 +73,11 @@ const Index = () => {
   const newsList = [
     {
       title: 'Otvorene prijave za novu školsku godinu',
-      date: '22. jul 2024',
+      date: '22. maj 2025',
       short: 'Počele su prijave za upis novih učenika u 2025/26...',
       full: `Pozivamo sve zainteresovane učenike i roditelje da se prijave za novu školsku godinu. Prijave su otvorene za sledeće instrumente: klavir, harmonika, flauta, gitara, kao i za teorijske predmete.
       
-      Upis traje do kraja avgusta. Testiranje kandidata biće organizovano u prostorijama škole svakog radnog dana od 10 do 14 časova, počevši od 1 avgusta.`,
+      Upis je 16.06. Testiranje kandidata biće organizovano u prostorijama škole od 11 do 14 časova.`,
       category: 'Upis',
     },
     {
