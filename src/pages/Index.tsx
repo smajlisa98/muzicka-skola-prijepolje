@@ -60,13 +60,56 @@ const Index = () => {
     },
     {
       url: `${import.meta.env.BASE_URL}20250722_180015.jpg`,
-      title: 'Dodela plakete školi',
+      title: 'Dodela plakete školi za 20 godina uspešnog rada IO Nova Varoš',
     },
     {
       url: `${import.meta.env.BASE_URL}20250722_180021.jpg`,
       title: 'Dodela plakete školi za 20 godina uspešnog rada IO Nova Varoš',
     },
   ];
+
+  const [selectedNews, setSelectedNews] = useState<null | typeof newsList[0]>(null);
+
+  const newsList = [
+    {
+      title: 'Otvorene prijave za novu školsku godinu',
+      date: '22. jul 2024',
+      short: 'Počele su prijave za upis novih učenika u 2025/26...',
+      full: `Pozivamo sve zainteresovane učenike i roditelje da se prijave za novu školsku godinu. Prijave su otvorene za sledeće instrumente: klavir, harmonika, flauta, gitara, kao i za teorijske predmete.
+      
+      Upis traje do kraja avgusta. Testiranje kandidata biće organizovano u prostorijama škole svakog radnog dana od 10 do 14 časova, počevši od 1 avgusta.`,
+      category: 'Upis',
+    },
+    {
+      title: 'Veče klasike za pamćenje – koncert polaznika Muzičke škole',
+      date: '18. jun 2025',
+      category: 'Koncert',
+      short: 'Učenički koncert u Domu kulture oduševio publiku — učestvovalo 49 učenika i učenica. Izvedeno 27 numera, od solo nastupa do klavirskih dua.',
+      full: `Tradicionalni junski koncert Muzičke škole u Novoj Varoši održan je u Domu kulture. Na sceni se predstavilo 49 učenika sa 27 izvođenja, od solističkih nastupa do klavirskih dua. Program su pripremili profesori Igor Miljković, Srđan Brzaković i Jelena Slović.
+
+      Koncert je obeležio i jubilej – 23 godine rada izdvojenog odeljenja u Novoj Varoši, a direktorka škole Dragana Tomašević naglasila je značaj kontinuiranog rada uprkos izazovima.
+
+      Pored odličnog koncerta, učenici su tokom godine osvojili brojne nagrade na domaćim i međunarodnim takmičenjima.
+
+      Više detalja možete pročitati u celoj vesti: [Pogledaj više](https://varoske.net/vesti/2640/veche-klasike-za-pamcenje-koncert-polaznika-muzichke-shkole)`,
+    },
+    {
+      title: 'Donacije za unapređenje nastave u muzičkoj školi',
+      date: '16. decembar 2024',
+      category: 'Oprema',
+      short: 'Udruženje Vivarta doniralo školi četiri harmonike. Stigli i laptop i električni pianino Yamaha.',
+      full: `Muzička škola u Prijepolju obogatila je svoj instrumentar i tehničku opremu zahvaljujući značajnim donacijama.
+
+      Udruženje Vivarta iz Beograda doniralo je školi četiri harmonike, koje će koristiti učenici u svakodnevnoj nastavi.
+
+      Pored toga, škola je dobila i novi laptop, donaciju predsednika opštine Prijepolje, koji će služiti za administrativne i pedagoške potrebe nastavnika.
+
+      Zahvaljujući zajedničkoj donaciji Zajednice muzičkih škola Srbije i Opštine Nova Varoš, za izdvojeno odeljenje u Novoj Varoši kupljen je i električni pianino Yamaha, vrednosti 220.000 dinara.
+
+      Ova oprema će omogućiti još kvalitetnije izvođenje nastave i dodatnu motivaciju za učenike i nastavnike.`
+    }
+  ];
+
 
   return (
     <div className="min-h-screen bg-white">
@@ -252,7 +295,7 @@ const Index = () => {
       </section>
 
       {/* News Section */}
-      <section id="news" className="py-20 bg-gray-50">
+      <section id="news" className="py-20 bg-gray-50 relative">
         <div className="container mx-auto px-4">
           <div className="text-center mb-16 animate-fade-in">
             <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Vesti</h2>
@@ -261,47 +304,14 @@ const Index = () => {
               Pratite najnovije vesti o koncertima, nagradama i aktivnostima naše škole
             </p>
           </div>
-          
+
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-            {[
-              {
-                title: 'Uspešan koncert učenika',
-                date: '15. decembar 2024',
-                description: 'Naši učenici su održali izvanredan koncert u gradskom pozorištu pred brojnom publikom.',
-                category: 'Koncert'
-              },
-              {
-                title: 'Prva nagrada na republičkom takmičenju',
-                date: '10. decembar 2024',
-                description: 'Ana Marić, učenica klavira, osvojila je prvo mesto na republičkom takmičenju mladih muzičara.',
-                category: 'Nagrada'
-              },
-              {
-                title: 'Otvorene prijave za novu školsku godinu',
-                date: '5. decembar 2024',
-                description: 'Počele su prijave za upis novih učenika u školsku 2024/25 godinu. Pridružite nam se!',
-                category: 'Upis'
-              },
-              {
-                title: 'Novi instrumenti u školi',
-                date: '28. novembar 2024',
-                description: 'Zahvaljujući donaciji grada, škola je obogaćena novim klavirima i violinama.',
-                category: 'Oprema'
-              },
-              {
-                title: 'Muzički workshop za decu',
-                date: '20. novembar 2024',
-                description: 'Organizovali smo besplatan workshop za decu uzrasta 5-8 godina.',
-                category: 'Događaj'
-              },
-              {
-                title: 'Jubilej škole - 57 godina rada',
-                date: '15. novembar 2024',
-                description: 'Obeležili smo 57 godina uspešnog rada i obrazovanja mladih muzičara.',
-                category: 'Jubilej'
-              }
-            ].map((news, index) => (
-              <Card key={index} className="hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in group">
+            {newsList.map((news, index) => (
+              <Card
+                key={index}
+                onClick={() => setSelectedNews(news)}
+                className="hover:shadow-xl transition-all duration-300 hover:scale-105 animate-fade-in group cursor-pointer"
+              >
                 <CardContent className="p-6">
                   <div className="flex items-center mb-3">
                     <Calendar className="h-4 w-4 text-blue-600 mr-2" />
@@ -313,13 +323,39 @@ const Index = () => {
                   <h3 className="text-lg font-semibold text-gray-800 mb-3 group-hover:text-blue-600 transition-colors">
                     {news.title}
                   </h3>
-                  <p className="text-gray-600 leading-relaxed">{news.description}</p>
+                  <p className="text-gray-600 leading-relaxed">{news.short}</p>
                 </CardContent>
               </Card>
             ))}
           </div>
         </div>
+
+        {/* Modal za detalje */}
+        {selectedNews && (
+          <div
+            className="fixed inset-0 bg-black/50 z-50 flex items-center justify-center px-4"
+            onClick={() => setSelectedNews(null)}
+          >
+            <div
+              className="bg-white rounded-lg max-w-screen-sm w-full p-6 md:p-8 relative"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <button
+                className="absolute top-3 right-3 text-gray-500 hover:text-gray-800 text-xl"
+                onClick={() => setSelectedNews(null)}
+              >
+                ✕
+              </button>
+              <h2 className="text-2xl font-bold text-gray-800 mb-2">{selectedNews.title}</h2>
+              <p className="text-sm text-gray-500 mb-4">
+                {selectedNews.date} — {selectedNews.category}
+              </p>
+              <p className="text-gray-700 leading-relaxed whitespace-pre-line">{selectedNews.full}</p>
+            </div>
+          </div>
+        )}
       </section>
+
 
       {/* Gallery Section */}
       <section id="gallery" className="py-20 bg-white">
