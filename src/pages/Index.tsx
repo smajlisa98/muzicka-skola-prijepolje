@@ -43,6 +43,31 @@ const Index = () => {
     navigate("/about");
   };
 
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  const galleryImages = [
+    {
+      url: `url(${import.meta.env.BASE_URL}20250722_175935.jpg)`,
+      title: 'Donacija Udruženja Vivarta',
+    },
+    {
+      url: `url(${import.meta.env.BASE_URL}20250722_180003.jpg)`,
+      title: 'Donacija Udruženja Vivarta',
+    },
+    {
+      url: `url(${import.meta.env.BASE_URL}20250722_180009.jpg)`,
+      title: 'Donacija Udruženja Vivarta',
+    },
+    {
+      url: `url(${import.meta.env.BASE_URL}20250722_180015.jpg)`,
+      title: 'Dodela plakete školi',
+    },
+    {
+      url: `url(${import.meta.env.BASE_URL}20250722_180021.jpg)`,
+      title: 'Dodela plakete školi za 20 godina uspešnog rada IO Nova Varoš',
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-white">
       {/* Navigation */}
@@ -292,6 +317,50 @@ const Index = () => {
                 </CardContent>
               </Card>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* Gallery Section */}
+      <section id="gallery" className="py-20 bg-white">
+        <div className="container mx-auto px-4">
+          <div className="text-center mb-16 animate-fade-in">
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-800 mb-6">Galerija</h2>
+            <div className="w-20 h-1 bg-blue-600 mx-auto mb-8"></div>
+            <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+              Pogledajte trenutke iz naše škole
+            </p>
+          </div>
+
+          <div className="relative overflow-hidden">
+            <div className="flex transition-transform duration-500 ease-in-out" style={{ transform: `translateX(-${currentIndex * 100}%)` }}>
+              {galleryImages.map((image, index) => (
+                <div key={index} className="min-w-full px-4">
+                  <div className="rounded-lg shadow-lg bg-white">
+                    <div className="flex items-center justify-center h-[400px] bg-white">
+                      <img
+                        src={image.url}
+                        alt={image.title}
+                        className="max-w-full max-h-full object-contain bg-transparent"
+                      />
+                    </div>
+                    <div className="p-4 bg-gray-100">
+                      <h3 className="text-lg font-semibold text-gray-800">{image.title}</h3>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Navigation Buttons */}
+          <div className="flex justify-center mt-8 space-x-4">
+            <Button onClick={() => setCurrentIndex((prev) => Math.max(prev - 1, 0))} disabled={currentIndex === 0}>
+              ← Prethodna
+            </Button>
+            <Button onClick={() => setCurrentIndex((prev) => Math.min(prev + 1, galleryImages.length - 1))} disabled={currentIndex === galleryImages.length - 1}>
+              Sledeća →
+            </Button>
           </div>
         </div>
       </section>
