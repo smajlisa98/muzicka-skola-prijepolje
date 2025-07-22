@@ -138,7 +138,7 @@ const Index = () => {
         <div 
           className="absolute inset-0 bg-gradient-to-br from-blue-900/80 to-purple-900/80"
           style={{
-            backgroundImage: `url(${import.meta.env.BASE_URL}hero-image-muzicka.jpeg)`,
+            backgroundImage: `url(${import.meta.env.BASE_URL}hero-image-muzicka.png)`,
             backgroundSize: 'cover',
             backgroundPosition: 'center',
             backgroundAttachment: 'fixed'
