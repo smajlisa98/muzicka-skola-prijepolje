@@ -75,7 +75,7 @@ const Index = () => {
       title: 'Otvorene prijave za novu školsku godinu',
       date: '22. maj 2025',
       short: 'Počele su prijave za upis novih učenika u 2025/26...',
-      full: `Pozivamo sve zainteresovane učenike i roditelje da se prijave za novu školsku godinu. Prijave su otvorene za sledeće instrumente: klavir, harmonika, flauta, gitara, kao i za teorijske predmete.
+      full: `Pozivamo sve zainteresovane učenike i roditelje da se prijave za novu školsku godinu. Prijave su otvorene za sledeće instrumente: klavir, harmonika, flauta, kao i za teorijske predmete.
       
       Upis je 16.06. Testiranje kandidata biće organizovano u prostorijama škole od 11 do 14 časova.`,
       category: 'Upis',
@@ -439,8 +439,8 @@ const Index = () => {
                     <MapPin className="h-6 w-6 text-blue-600 mt-1" />
                     <div>
                       <h4 className="font-semibold text-gray-800">Adresa</h4>
-                      <p className="text-gray-600">Санџачких бригада бр.2</p>
-                      <p className="text-gray-600">31300 Пријепоље, Србија</p>
+                      <p className="text-gray-600">Sandžačkih brigada br.2</p>
+                      <p className="text-gray-600">31300 Prijepolje, Srbija</p>
                     </div>
                   </div>
                 </div>
