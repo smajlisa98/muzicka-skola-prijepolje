@@ -6,8 +6,27 @@ import { useNavigate } from 'react-router-dom';
 
 const newsList = [
   {
-    title: 'Dečija nedelja u našoj školi — posete i radionice',
+    title: 'Seminar na Zlatiboru – stručno usavršavanje nastavnika',
     date: '25. oktobar 2025',
+    category: 'Seminar',
+    short:
+      'Nastavnici naše škole učestvovali su na seminaru Zajednice muzičkih i baletskih škola Srbije na Zlatiboru (22–25. oktobar) sa akcentom na metodiku nastave, evaluaciju i savremene pristupe.',
+    full: `Nastavnici Osnovne muzičke škole Prijepolje prisustvovali su seminaru održanom na Zlatiboru u organizacijiZajednice muzičkih i baletskih škola Srbije od 22. do 25. oktobra 2025. godine.
+
+  Tokom četiri dana obuhvaćene su teme: 
+  • savremeni pristupi u nastavi instrumenta i solfeđa,  
+  • metodika vežbanja i motivacija učenika,  
+  • evaluacija postignuća i priprema za takmičenja,  
+  • inkluzivni pristupi i diferencirana nastava,  
+  • upotreba digitalnih alata i notacionog softvera u nastavi.
+
+  Učesnici su razmenili iskustva i primere dobre prakse sa kolegama iz škola širom Srbije. Stečena znanja biće implementirana u nastavi kroz unapređene planove časa, nove materijale i još veću podršku učenicima u pripremi javnih nastupa i takmičenja.
+
+  Zahvaljujemo organizatorima na kvalitetnom programu i inspirativnim predavanjima.`,
+  },
+  {
+    title: 'Dečija nedelja u našoj školi — posete i radionice',
+    date: '20. oktobar 2025',
     category: 'Posete',
     short:
       'Školu su posetili predškolci vrtića „Maslačak“, učenici drugog razreda OŠ „Boško Buha“ iz Ivanja i deca sa smetnjama u razvoju u okviru projekta „Zajedno za Polimlje“.',
