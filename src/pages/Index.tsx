@@ -6,6 +6,24 @@ import { useNavigate } from 'react-router-dom';
 
 const newsList = [
   {
+    title: 'Dečija nedelja u našoj školi — posete i radionice',
+    date: '25. oktobar 2025',
+    category: 'Posete',
+    short:
+      'Školu su posetili predškolci vrtića „Maslačak“, učenici drugog razreda OŠ „Boško Buha“ iz Ivanja i deca sa smetnjama u razvoju u okviru projekta „Zajedno za Polimlje“.',
+    full: `U okviru obeležavanja Dečije nedelje, Osnovna muzička škola Prijepolje bila je domaćin nizu inspirativnih poseta i muzičkih radionica.
+
+  🎵 Predškolska grupa vrtića „Maslačak“ — Mališani su uživali u kratkim nastupima i imali priliku da isprobaju osnovne zvuke na klaviru, harmonici i udaraljkama. Poseban akcenat bio je na igri kroz ritam i pesmu.
+
+  🎶 Učenici drugog razreda OŠ „Boško Buha“ iz Ivanja — Kroz interaktivne mini-časove i kratke koncerte, đaci su se upoznali sa instrumentima, pravilnim držanjem i osnovama muzikalnosti, uz mnoštvo pitanja i osmeha.
+
+  🤝 Deca sa smetnjama u razvoju u okviru projekta „Zajedno za Polimlje“ — Održane su inkluzivne aktivnosti prilagođene učesnicima, sa fokusom na zajedništvo, senzornu igru zvukom i kreativno muzičko izražavanje.
+
+  Atmosfera tokom cele nedelje bila je ispunjena radoznalošću, pesmom i dobrim raspoloženjem — hvala svim posetiocima, roditeljima i vaspitačima/učiteljima na podršci!
+
+  📸 Fotografije sa poseta možete pogledati u sekciji Galerija.`,
+  },
+  {
     title: 'Nova školska godina u Muzičkoj školi u Prijepolju – više đaka, bolji uslovi i velika očekivanja',
     date: '1. septembar 2025',
     category: 'Škola',
@@ -86,6 +104,9 @@ const Index = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const galleryImages = [
+    { url: `${import.meta.env.BASE_URL}predskolska-grupa-maslacak.jpg`, title: 'Predškolska grupa vrtića „Maslačak“' },
+    { url: `${import.meta.env.BASE_URL}ucenici-OS-Bosko-Buha.jpg`, title: 'Učenici drugog razreda OŠ „Boško Buha“ iz Ivanja' },
+    { url: `${import.meta.env.BASE_URL}zajedno-za-Polimlje.jpg`, title: 'Deca sa smetnjama u razvoju u okviru projekta „Zajedno za Polimlje“' },
     { url: `${import.meta.env.BASE_URL}20250722_175935.jpg`, title: 'Donacija Udruženja Vivarta' },
     { url: `${import.meta.env.BASE_URL}20250722_180009.jpg`, title: 'Donacija Udruženja Vivarta' },
     { url: `${import.meta.env.BASE_URL}20250722_180003.jpg`, title: 'Donacija predsednika opštine' },
