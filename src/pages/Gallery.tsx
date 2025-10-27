@@ -208,7 +208,7 @@ const Gallery = () => {
           
           <div className="border-t border-gray-800 pt-8 mt-8 text-center">
             <p className="text-gray-400">
-              © 2024 Muzička škola Prijepolje. Sva prava zadržana.
+              © 2024 DEVNINE. Sva prava zadržana.
             </p>
           </div>
         </div>

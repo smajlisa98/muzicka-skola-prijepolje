@@ -1,11 +1,29 @@
-import React from 'react';
-import { ArrowLeft, Music, MapPin, Users, Award, Trophy } from 'lucide-react';
+import { ArrowLeft, MapPin, Users, Award, Trophy, FileText, Download, Facebook } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
 
 const About = () => {
   const navigate = useNavigate();
+
+  const documents = [
+    {
+      title: 'Godišnji izveštaji 2024-2025',
+      href: `${import.meta.env.BASE_URL}docs/godisnji-izvestaji-2024-25-novi.doc`,
+      type: 'DOC',
+    },
+    {
+      title: 'Izveštaji o radu direktora 2024-2025',
+      href: `${import.meta.env.BASE_URL}docs/izvestaj-o-radu-dir-24-25.doc`,
+      type: 'DOC',
+    },
+    {
+      title: 'Statut OMŠ Prijepolje',
+      href: `${import.meta.env.BASE_URL}docs/statut-oms-prijepolje.docx`,
+      type: 'DOCX',
+    },
+  ];
+
 
   const navigateHome = () => {
     navigate("/");
@@ -184,6 +202,46 @@ const About = () => {
               </Card>
             </div>
 
+            <Card className="mb-12 shadow-lg animate-fade-in">
+              <CardContent className="p-8">
+                <h2 className="text-3xl font-bold text-gray-800 mb-6 flex items-center">
+                  <FileText className="h-8 w-8 text-blue-600 mr-3" />
+                  Dokumenta
+                </h2>
+
+                <ul className="divide-y divide-gray-100">
+                  {documents.map((doc, idx) => (
+                    <li key={idx} className="py-4 flex items-center justify-between">
+                      <div className="flex items-center gap-4">
+                        <div className="rounded-xl border bg-white p-3">
+                          <FileText className="h-6 w-6 text-blue-600" />
+                        </div>
+                        <div>
+                          <p className="font-medium text-gray-800">{doc.title}</p>
+                          <p className="text-sm text-gray-500">{doc.type} fajl</p>
+                        </div>
+                      </div>
+
+                      <div className="flex items-center gap-3">
+                        <Button
+                          asChild
+                          className="bg-blue-600 hover:bg-blue-700 text-white"
+                          title="Preuzmi dokument"
+                        >
+                          <a href={doc.href} download>
+                            <Download className="h-4 w-4 mr-2" />
+                            Preuzmi
+                          </a>
+                        </Button>
+                      </div>
+                    </li>
+                  ))}
+                </ul>
+              </CardContent>
+            </Card>
+
+
+
             {/* Call to Action */}
             <div className="text-center animate-fade-in">
               <Button 
@@ -200,30 +258,40 @@ const About = () => {
       {/* Footer */}
       <footer className="bg-gray-900 text-white py-12">
         <div className="container mx-auto px-4">
-          <div className="text-center">
-            <div className="flex items-center justify-center mb-4">
-              <img
-                src={`${import.meta.env.BASE_URL}muzicka-skola-pp-logo.png`}
-                alt="Logo Muzičke škole"
-                className="h-10 w-auto"
-              />
-              <span className="text-xl font-bold">Muzička škola Prijepolje</span>
+          <div className="grid md:grid-cols-3 gap-8 mb-8">
+            <div>
+              <div className="flex items-center space-x-2 mb-4">
+                <img
+                  src={`${import.meta.env.BASE_URL}muzicka-skola-pp-logo.png`}
+                  alt="Logo Muzičke škole"
+                  className="h-10 w-auto"
+                />
+                <span className="text-xl font-bold">Muzička škola Prijepolje</span>
+              </div>
+              <p className="text-gray-400 leading-relaxed">
+                Odgajamo nove generacije muzičara kroz kvalitetno obrazovanje i kreativno učenje.
+              </p>
             </div>
-            <p className="text-gray-400 mb-6">
-              Odgajamo nove generacije muzičara kroz kvalitetno obrazovanje i kreativno učenje.
-            </p>
-            <Button 
-              onClick={navigateHome}
-              variant="outline"
-              className="bg-transparent border-white text-white hover:bg-white hover:text-gray-900"
-            >
-              Nazad na početnu stranicu
-            </Button>
+
+            <div>
+              <div className="space-y-2">
+                <button onClick={navigateHome} className="block text-gray-400 hover:text-white transition-colors">Početna</button>
+              </div>
+            </div>
+
+            <div>
+              <h4 className="text-lg font-semibold mb-4">Pratite nas</h4>
+              <div className="flex space-x-4">
+                <a href="https://www.facebook.com/muzickaskolaprijepolje/" className="text-gray-400 hover:text-white transition-colors hover:scale-110 transform" target="_blank">
+                  <Facebook className="h-6 w-6" />
+                </a>
+              </div>
+            </div>
           </div>
-          
-          <div className="border-t border-gray-800 pt-8 mt-8 text-center">
+
+          <div className="border-t border-gray-800 pt-8 text-center">
             <p className="text-gray-400">
-              © 2024 Muzička škola Prijepolje. Sva prava zadržana.
+              © 2025 DEVNINE. Sva prava zadržana.
             </p>
           </div>
         </div>
