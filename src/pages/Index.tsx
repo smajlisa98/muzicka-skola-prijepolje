@@ -29,12 +29,14 @@ const newsList = [
     date: '20. oktobar 2025',
     category: 'Posete',
     short:
-      'Školu su posetili predškolci vrtića „Maslačak“, učenici drugog razreda OŠ „Boško Buha“ iz Ivanja i deca sa smetnjama u razvoju u okviru projekta „Zajedno za Polimlje“.',
+      'Školu su posetili predškolci vrtića „Maslačak“, učenici drugog razreda OŠ „Boško Buha“ iz Ivanja, deca iz vrtića „Paša i Nataša“ iz Nove Varoši i deca sa smetnjama u razvoju u okviru projekta „Zajedno za Polimlje“.',
     full: `U okviru obeležavanja Dečije nedelje, Osnovna muzička škola Prijepolje bila je domaćin nizu inspirativnih poseta i muzičkih radionica.
 
   🎵 Predškolska grupa vrtića „Maslačak“ — Mališani su uživali u kratkim nastupima i imali priliku da isprobaju osnovne zvuke na klaviru, harmonici i udaraljkama. Poseban akcenat bio je na igri kroz ritam i pesmu.
 
   🎶 Učenici drugog razreda OŠ „Boško Buha“ iz Ivanja — Kroz interaktivne mini-časove i kratke koncerte, đaci su se upoznali sa instrumentima, pravilnim držanjem i osnovama muzikalnosti, uz mnoštvo pitanja i osmeha.
+
+  🎵 Deca iz vrtića „Paša i Nataša“ iz Nove Varoši posetila su izdvojeno odeljenje škole — tokom posete imali su priliku da slušaju nastupe učenika, upoznaju se sa instrumentima i uživaju u zajedničkom muziciranju i pesmi.
 
   🤝 Deca sa smetnjama u razvoju u okviru projekta „Zajedno za Polimlje“ — Održane su inkluzivne aktivnosti prilagođene učesnicima, sa fokusom na zajedništvo, senzornu igru zvukom i kreativno muzičko izražavanje.
 
@@ -124,6 +126,7 @@ const Index = () => {
 
   const galleryImages = [
     { url: `${import.meta.env.BASE_URL}predskolska-grupa-maslacak.jpg`, title: 'Predškolska grupa vrtića „Maslačak“' },
+    { url: `${import.meta.env.BASE_URL}pasa-i-natasa-muzicka.jpg`, title: 'Deca iz vrtića „Paša i Nataša“ iz Nove Varoši' },
     { url: `${import.meta.env.BASE_URL}ucenici-OS-Bosko-Buha.jpg`, title: 'Učenici drugog razreda OŠ „Boško Buha“ iz Ivanja' },
     { url: `${import.meta.env.BASE_URL}zajedno-za-Polimlje.jpg`, title: 'Deca sa smetnjama u razvoju u okviru projekta „Zajedno za Polimlje“' },
     { url: `${import.meta.env.BASE_URL}20250722_175935.jpg`, title: 'Donacija Udruženja Vivarta' },

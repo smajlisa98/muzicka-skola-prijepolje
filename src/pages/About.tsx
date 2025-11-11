@@ -1,12 +1,19 @@
-import { ArrowLeft, MapPin, Users, Award, Trophy, FileText, Download, Facebook } from 'lucide-react';
+import { ArrowLeft, MapPin, Users, Award, Trophy, FileText, Download, Facebook, ExternalLink } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { useNavigate } from 'react-router-dom';
+
+const isExternal = (url: string) => /^https?:\/\//.test(url);
 
 const About = () => {
   const navigate = useNavigate();
 
   const documents = [
+    {
+      title: 'Informator o radu (poverenik.rs)',
+      href: 'https://informator.poverenik.rs/naslovna',
+      type: 'LINK',
+    },
     {
       title: 'Godišnji izveštaji 2024-2025',
       href: `${import.meta.env.BASE_URL}docs/godisnji-izvestaji-2024-25-novi.doc`,
@@ -223,16 +230,29 @@ const About = () => {
                       </div>
 
                       <div className="flex items-center gap-3">
-                        <Button
-                          asChild
-                          className="bg-blue-600 hover:bg-blue-700 text-white"
-                          title="Preuzmi dokument"
-                        >
-                          <a href={doc.href} download>
-                            <Download className="h-4 w-4 mr-2" />
-                            Preuzmi
-                          </a>
-                        </Button>
+                        {isExternal(doc.href) ? (
+                          <Button
+                            asChild
+                            className="bg-blue-600 hover:bg-blue-700 text-white"
+                            title="Otvori informator u novom tabu"
+                          >
+                            <a href={doc.href} target="_blank" rel="noopener noreferrer">
+                              <ExternalLink className="h-4 w-4 mr-2" />
+                              Otvori
+                            </a>
+                          </Button>
+                        ) : (
+                          <Button
+                            asChild
+                            className="bg-blue-600 hover:bg-blue-700 text-white"
+                            title="Preuzmi dokument"
+                          >
+                            <a href={doc.href} download>
+                              <Download className="h-4 w-4 mr-2" />
+                              Preuzmi
+                            </a>
+                          </Button>
+                        )}
                       </div>
                     </li>
                   ))}
